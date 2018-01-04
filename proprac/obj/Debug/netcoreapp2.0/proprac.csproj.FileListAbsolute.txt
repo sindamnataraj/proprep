@@ -1,0 +1,11 @@
+D:\Repos\_p\proprac\proprac\bin\Debug\netcoreapp2.0\proprac.deps.json
+D:\Repos\_p\proprac\proprac\bin\Debug\netcoreapp2.0\proprac.runtimeconfig.json
+D:\Repos\_p\proprac\proprac\bin\Debug\netcoreapp2.0\proprac.runtimeconfig.dev.json
+D:\Repos\_p\proprac\proprac\bin\Debug\netcoreapp2.0\proprac.dll
+D:\Repos\_p\proprac\proprac\bin\Debug\netcoreapp2.0\proprac.pdb
+D:\Repos\_p\proprac\proprac\obj\Debug\netcoreapp2.0\proprac.csprojResolveAssemblyReference.cache
+D:\Repos\_p\proprac\proprac\obj\Debug\netcoreapp2.0\proprac.csproj.CoreCompileInputs.cache
+D:\Repos\_p\proprac\proprac\obj\Debug\netcoreapp2.0\proprac.AssemblyInfoInputs.cache
+D:\Repos\_p\proprac\proprac\obj\Debug\netcoreapp2.0\proprac.AssemblyInfo.cs
+D:\Repos\_p\proprac\proprac\obj\Debug\netcoreapp2.0\proprac.dll
+D:\Repos\_p\proprac\proprac\obj\Debug\netcoreapp2.0\proprac.pdb
