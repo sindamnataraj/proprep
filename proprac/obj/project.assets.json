@@ -673,11 +673,11 @@
       "hideWarningsAndErrors": true
     },
     "restore": {
-      "projectUniqueName": "D:\\Repos\\_p\\proprac\\proprac\\proprac.csproj",
+      "projectUniqueName": "D:\\Repos\\_p\\git_propac\\proprep\\proprac\\proprac.csproj",
       "projectName": "proprac",
-      "projectPath": "D:\\Repos\\_p\\proprac\\proprac\\proprac.csproj",
+      "projectPath": "D:\\Repos\\_p\\git_propac\\proprep\\proprac\\proprac.csproj",
       "packagesPath": "C:\\Users\\nasindam\\.nuget\\packages\\",
-      "outputPath": "D:\\Repos\\_p\\proprac\\proprac\\obj\\",
+      "outputPath": "D:\\Repos\\_p\\git_propac\\proprep\\proprac\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

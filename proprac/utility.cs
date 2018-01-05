@@ -4,7 +4,7 @@ using System.Text;
 
 namespace proprac
 {
-    public static class utitlity
+    public static class utility
     {
         public static void swap(int[] A, int i, int j)
         {
@@ -20,6 +20,20 @@ namespace proprac
                 Console.Write("{0} ",item);
             }
             Console.WriteLine();
+        }
+
+        public static void showarray_vertical(int[] A)
+        {
+            foreach (var item in A)
+            {
+                Console.WriteLine("{0} ", item);
+            }
+            Console.WriteLine();
+        }
+
+        public static int getNthDigit(int A,int n)
+        {
+            return (A / (int)(Math.Pow((int)10, (int)n - 1))) % 10;
         }
     }
 }

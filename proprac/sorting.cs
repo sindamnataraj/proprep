@@ -17,7 +17,7 @@ namespace proprac
                     if (A[j] < A[curSmall]) curSmall = j; 
                 }
 
-                if (curSmall != i) utitlity.swap(A, i, curSmall);
+                if (curSmall != i) utility.swap(A, i, curSmall);
 
             }
 
@@ -51,7 +51,7 @@ namespace proprac
             {
                 for (int i = 1; i <= j; i++)
                 {
-                    if (A[i] < A[i - 1]) utitlity.swap(A, i, i - 1);
+                    if (A[i] < A[i - 1]) utility.swap(A, i, i - 1);
                 }
             }
         }
@@ -76,7 +76,7 @@ namespace proprac
             {
                 if (A[j] <= k)
                 {
-                    utitlity.swap(A, i + 1, j);
+                    utility.swap(A, i + 1, j);
                     i++;
                 }
                 j++;
@@ -155,7 +155,80 @@ namespace proprac
 
         }
 
+        //A contains numbers 0-9 only => k = 10
+        public static int[] countingsort(int[] A)
+        {
+            int k = 10;
+            int[] C = new int[k];
+            int[] B = new int[A.Length]; //Result array
 
+            for (int i = 0; i < C.Length; i++)
+            {
+                C[i] = 0;
+            }
 
+            for (int i = 0; i < A.Length; i++)
+            {
+                C[A[i]]++;
+            }
+
+            for (int i = 1; i < C.Length; i++)
+            {
+                C[i] = C[i] + C[i - 1];
+            }
+
+            for (int i = 0; i < A.Length; i++)
+            {
+                B[C[A[i]] - 1] = A[i];
+                C[A[i]]--;
+            }
+
+            return B;
+        }
+
+        //d is number of digits in each number
+        public static void radixsort(int[] A, int d)
+        {
+            for (int i = 1; i <= d; i++)
+            {
+                countingsort_radixsort(A, i);
+            }
+        }
+
+        public static void countingsort_radixsort(int[] A,int d)
+        {
+            int k = 10;
+            int[] C = new int[k];
+            int[] B = new int[A.Length]; //Result array
+
+            Array.Copy(A, B, A.Length);
+
+            for (int i = 0; i < C.Length; i++)
+            {
+                C[i] = 0;
+            }
+
+            for (int i = 0; i < B.Length; i++)
+            {
+                int number = utility.getNthDigit(B[i],d);
+                C[number]++;
+            }
+
+            for (int i = 1; i < C.Length; i++)
+            {
+                C[i] = C[i] + C[i - 1];
+            }
+
+            for (int i = 0; i < B.Length; i++)
+            {
+                int number = utility.getNthDigit(B[i], d);
+                A[C[number] - 1] = B[i];
+                C[number]--;
+            }
+
+            
+        }
+
+        
     }
 }
