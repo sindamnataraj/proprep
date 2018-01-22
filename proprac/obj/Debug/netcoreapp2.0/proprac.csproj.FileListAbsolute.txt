@@ -20,3 +20,14 @@ D:\Repos\_p\git_propac\proprep\proprac\obj\Debug\netcoreapp2.0\proprac.AssemblyI
 D:\Repos\_p\git_propac\proprep\proprac\obj\Debug\netcoreapp2.0\proprac.AssemblyInfo.cs
 D:\Repos\_p\git_propac\proprep\proprac\obj\Debug\netcoreapp2.0\proprac.dll
 D:\Repos\_p\git_propac\proprep\proprac\obj\Debug\netcoreapp2.0\proprac.pdb
+C:\Users\sinda\practice\proprep\proprac\bin\Debug\netcoreapp2.0\proprac.deps.json
+C:\Users\sinda\practice\proprep\proprac\bin\Debug\netcoreapp2.0\proprac.runtimeconfig.json
+C:\Users\sinda\practice\proprep\proprac\bin\Debug\netcoreapp2.0\proprac.runtimeconfig.dev.json
+C:\Users\sinda\practice\proprep\proprac\bin\Debug\netcoreapp2.0\proprac.dll
+C:\Users\sinda\practice\proprep\proprac\bin\Debug\netcoreapp2.0\proprac.pdb
+C:\Users\sinda\practice\proprep\proprac\obj\Debug\netcoreapp2.0\proprac.csprojResolveAssemblyReference.cache
+C:\Users\sinda\practice\proprep\proprac\obj\Debug\netcoreapp2.0\proprac.AssemblyInfo.cs
+C:\Users\sinda\practice\proprep\proprac\obj\Debug\netcoreapp2.0\proprac.dll
+C:\Users\sinda\practice\proprep\proprac\obj\Debug\netcoreapp2.0\proprac.pdb
+C:\Users\sinda\practice\proprep\proprac\obj\Debug\netcoreapp2.0\proprac.csproj.CoreCompileInputs.cache
+C:\Users\sinda\practice\proprep\proprac\obj\Debug\netcoreapp2.0\proprac.AssemblyInfoInputs.cache

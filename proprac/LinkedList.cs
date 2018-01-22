@@ -4,21 +4,20 @@ using System.Text;
 
 namespace proprac
 {
-    
+    public class LinkedListNode {
+        public LinkedListNode prev;
+        public int n;
+        public LinkedListNode next;
+
+        public LinkedListNode(int n)
+        {
+            this.n = n;
+            next = null;
+        }
+    }
+
     public class LinkedList
     {
-        public class LinkedListNode {
-            public int n;
-            public LinkedListNode next;
-
-            public LinkedListNode(int n)
-            {
-                this.n = n;
-                next = null;
-            }
-        }
-
-
         private LinkedListNode head;
         private LinkedListNode tail;
 
@@ -30,52 +29,34 @@ namespace proprac
 
         public void Insert(int n)
         {
-            head = Insert(head, n);      
-        }
-
-        private LinkedListNode Insert(LinkedListNode head, int n)
-        {
-            if (head == null) return new LinkedListNode(n);
-            head.next = Insert(head.next, n);
-            return head;
-        }
-
-
-        public void PrintList()
-        {
-            PrintList(head);
-        }
-
-        private void PrintList(LinkedListNode head)
-        {
-            if (head == null) Console.WriteLine();
-            else
+            if (head == null && tail == null)
             {
-                Console.Write("{0} ",head.n);
-                PrintList(head.next);
+                LinkedListNode temp = new LinkedListNode(n);
+                head = temp;
+                tail = temp;
+            }
+            else {
+                tail.next = new LinkedListNode(n);
+                tail = tail.next;
             }
         }
 
-        //Delete
-
-        //Reverse
-        public void Reverse()
+        public void PrintLinkedList()
         {
-            head = Reverse(head);
+            LinkedListNode temp = head;
+            while (temp != null)
+            {
+                Console.Write("{0} ", temp.n);
+                temp = temp.next;
+            }
+            Console.WriteLine();
         }
 
-        private LinkedListNode Reverse(LinkedListNode node)
-        {
-            if (node == null || node.next == null) return node;
-            LinkedListNode first = node;
-            LinkedListNode second = node.next;
 
-            LinkedListNode reverseOfSecond = Reverse(second);
-            second.next = first;
-            first.next = null;
-            return reverseOfSecond;
-        }
-
+        //delete node
+        
+        
+        //reverse list
 
 
     }

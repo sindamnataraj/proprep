@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace proprac
 {
@@ -7,18 +9,22 @@ namespace proprac
         static void Main(string[] args)
         {
 
-            int[] A = { 25, 23, 4, 12, 1, 145 };
-            int[] B = { 9, 0, 9, 8, 3, 0, 1, 8, 3 };
-            int[] C = { 25, 23, 41, 12, 11, 45 };
+            string s = "12";
+            bool ssd = (s == "12");
+            BinaryTree bt = new BinaryTree();
+            bt.Insert(1);
+            bt.Insert(2);
+            bt.Insert(3);
+            bt.Insert(4);
+            bt.Insert(5);
+            bt.Insert(6);
+            bt.Insert(7);
 
-            LinkedList L = new LinkedList();
-            L.Insert(1);
-            L.Insert(2);
-            L.Insert(3);
-            L.Insert(4);
-            L.Insert(5);
-            L.Reverse();
-            L.PrintList();
+            bt.Levelorder_Traversal();
+
+            bt.Inorder_Recursive();
+            bt.PreOrder_Recursive();
+            bt.PostOrder_Recursive();
 
             Console.Read();
         }
