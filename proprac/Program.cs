@@ -23,8 +23,8 @@ namespace proprac
             bt.Levelorder_Traversal();
 
             bt.Inorder_Recursive();
-            bt.PreOrder_Recursive();
-            bt.PostOrder_Recursive();
+
+            bt.Inorder_NonRecursive();
 
             Console.Read();
         }

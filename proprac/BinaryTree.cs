@@ -18,6 +18,7 @@ namespace proprac
     public class BinaryTree
     {
         private BinaryTreeNode head;
+
         public BinaryTree()
         {
             head = null;
@@ -60,7 +61,6 @@ namespace proprac
 
         }
 
-
         public void Levelorder_Traversal() {
             if (head == null) return;
             Queue<BinaryTreeNode> q = new Queue<BinaryTreeNode>();
@@ -97,10 +97,37 @@ namespace proprac
             if (head != null)
             {
                 Inorder_Recursive(head.left);
-                Console.Write("{0} ",head.n);
+                Console.Write("{0} ", head.n);
                 Inorder_Recursive(head.right);
             }
         }
+
+        public void Inorder_NonRecursive()
+        {
+            Inorder_NonRecursive(head);
+        }
+
+        private void Inorder_NonRecursive(BinaryTreeNode Head)
+        {
+            if (Head == null) return;
+            Stack<BinaryTreeNode> s = new Stack<BinaryTreeNode>();
+
+            while (Head != null || s.Count > 0)
+            {
+                if (Head != null)
+                {
+                    s.Push(Head);
+                    Head = Head.left;
+                }
+                else
+                {
+                    Head = s.Pop();
+                    Console.Write("{0} ",Head.n);
+                    Head = Head.right;
+                }
+            }
+        }
+
 
         public void PreOrder_Recursive()
         {
@@ -135,7 +162,6 @@ namespace proprac
                 Console.Write("{0} ", head.n);
             }
         }
-
 
 
 
