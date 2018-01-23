@@ -269,13 +269,74 @@ namespace proprac
         }
 
         public int GetHalfNodes() {
-
+            return Gethalfnodes(head, 0);
         }
         private int Gethalfnodes(BinaryTreeNode head, int currentCount)
         {
             if (head == null) return currentCount;
+            if (head.left == null && head.right != null) return Gethalfnodes(head.right,currentCount+1);
+            if (head.left != null && head.right == null) return Gethalfnodes(head.left,currentCount+1);
+            return Gethalfnodes(head.left, currentCount) + Gethalfnodes(head.right, currentCount);
+        }
+
+        //are two BTs structurally identical ?
+        public static bool AreIdentical(BinaryTreeNode Node1, BinaryTreeNode Node2)
+        {
+            if (Node1 == null && Node2 == null) return true;
+            if (Node1 != null && Node2 == null) return false;
+            if (Node1 == null && Node2 != null) return false;
+            return AreIdentical(Node1.left, Node2.left) && AreIdentical(Node1.right, Node2.right);
+        }
+
+        //Level with maximum sum
+        public int GetmaximumLevel()
+        {
+            return GetMaximumLevel(head);
+        }
+        private int GetMaximumLevel(BinaryTreeNode Head)
+        {
+            if (Head == null) return 0;
+
+            int currentMax = int.MinValue;
+            int currentMaxLevel = 0;
+
+            int currentLevel = 0;
+            int currentLevelSum = 0;
+            Queue<BinaryTreeNode> q = new Queue<BinaryTreeNode>();
+
+            q.Enqueue(null);
+            q.Enqueue(Head);
+
+            while (q.Count > 0)
+            {
+                BinaryTreeNode temp = q.Dequeue();
+                if (temp != null)
+                {
+                    currentLevelSum += temp.n;
+                    if (temp.left != null) q.Enqueue(temp.left);
+                    if (temp.right != null) q.Enqueue(temp.right);
+
+                }
+                else
+                {
+                    currentLevel++;
+                    if (currentLevelSum > currentMax)
+                    {
+                        currentMax = currentLevelSum;
+                        currentMaxLevel = currentLevel;
+                    }
+
+                    if (q.Count > 0) q.Enqueue(null);
+
+                }
+            }
+
+            return currentMaxLevel;
+            
 
 
         }
+
+
     }
 }
