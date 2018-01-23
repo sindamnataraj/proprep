@@ -128,7 +128,6 @@ namespace proprac
             }
         }
 
-
         public void PreOrder_Recursive()
         {
             Console.WriteLine("Pre Order:");
@@ -163,7 +162,120 @@ namespace proprac
             }
         }
 
+        private void PostOrder_NonRecursive(BinaryTreeNode head)
+        {
+            if (head == null) return;
+            Stack<BinaryTreeNode> s = new Stack<BinaryTreeNode>();
+
+            while(head!=null || s.Count>0)
+            {
+                if (head != null)
+                {
+                    if (head.right != null) s.Push(head.right);
+                    s.Push(head);
+                    head = head.left;
+                }
+                else
+                {
+                    head = s.Pop();
+                    if (s.Count > 0 && s.Peek() == head.right)
+                    {
+                        BinaryTreeNode temp = head;
+                        head = s.Pop();
+                        s.Push(temp);
+                    }
+                    else {
+                        Console.Write("{0} ",head.n);
+                        head = null;
+                    }
+                }
+            }
+        }
+        
+        //Size of the binary tree
+        public int GetSize()
+        {
+            return GetSize(head);
+        }
+
+        private int GetSize(BinaryTreeNode Head)
+        {
+            if (head == null) return 0;
+            return GetSize(head.left) + GetSize(head.right) + 1;
+        }
+
+        //max depth/ height of binary tree
+
+        //Find the deepest node in binary tree
+        //Level Order traversal
+        public int FindDeepest()
+        {
+            BinaryTreeNode temp = FindDeepest(head);
+            if (temp != null) return temp.n;
+            return -1;
+        }
+        private BinaryTreeNode FindDeepest(BinaryTreeNode head)
+        {
+            if (head == null) return null;
+            Queue<BinaryTreeNode> q = new Queue<BinaryTreeNode>();
+            q.Enqueue(head);
+            BinaryTreeNode previous = null;
+            BinaryTreeNode current = null;
+            while (q.Count > 0)
+            {
+                
+                current = q.Dequeue();
+                if (current != null)
+                {
+                    previous = current;
+                    if (current.left != null) q.Enqueue(current.left);
+                    if (current.right != null) q.Enqueue(current.right);
+                }
+                
+            }
+
+            return previous;
+        }
+
+        //search for number in binary tree
+        public bool Search(int n)
+        {
+            BinaryTreeNode temp = Search(head, n);
+            if (temp == null) return false;
+            return true;
+        }
+        private BinaryTreeNode Search(BinaryTreeNode head, int n)
+        {
+            if (head == null) return null;
+            if (head.n == n) return head;
+            BinaryTreeNode left = Search(head.left,n);
+            if (left != null) return left;
+            return Search(head.right,n);
+            
+        }
+
+        //delete specific node in binary tree
+
+        //number of leave nodes
+        public int GetLeavesCount()
+        {
+            return GetLeavesCount(head, 0);
+        }
+        private int GetLeavesCount(BinaryTreeNode head,int currentCount)
+        {
+            if (head == null) return currentCount;
+            if (head.left == null && head.right == null) return currentCount + 1;
+            return GetLeavesCount(head.left, currentCount) + GetLeavesCount(head.right, currentCount);
+        }
+
+        public int GetHalfNodes() {
+
+        }
+        private int Gethalfnodes(BinaryTreeNode head, int currentCount)
+        {
+            if (head == null) return currentCount;
 
 
+        }
     }
 }
