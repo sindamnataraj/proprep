@@ -337,6 +337,74 @@ namespace proprac
 
         }
 
+        //print all root to leaf paths
+        public void PrintBranches()
+        {
+            PrintBranches(head, new Queue<int>());
+        }
+        private void PrintBranches(BinaryTreeNode head, Queue<int> path)
+        {
+            if (head == null) return;
+            path.Enqueue(head.n);
+            if (head.left == null && head.right == null) PrintQueue(path);
+            PrintBranches(head.left,path);
+            PrintBranches(head.right,path);
+        }
+        private static void PrintQueue(Queue<int> q)
+        {
+            foreach (var item in q)
+            {
+                Console.Write("{0} ->");
+            }
+            Console.WriteLine();
+        }
 
+        //Sum of all elements
+        public int GetGlobalSum()
+        {
+            return GetGlobalSum(head);
+        }
+        private int GetGlobalSum(BinaryTreeNode Node)
+        {
+            if (Node == null) return 0;
+            return Node.n + GetGlobalSum(Node.left) + GetGlobalSum(Node.right);
+        }
+
+
+        //Convert to Mirror 
+        public void ConvertMirrorImage()
+        {
+            head = CovertToMirror(head);
+        }
+        public BinaryTreeNode CovertToMirror(BinaryTreeNode Head)
+        {
+            if (Head == null) return Head;
+            BinaryTreeNode left = Head.left;
+            Head.left = Head.right;
+            Head.right = left;
+            return Head;
+        }
+
+        //Are two trees Mirrors
+        public static bool AreMirrorImages(BinaryTreeNode Node1, BinaryTreeNode Node2)
+        {
+            if (Node1 == null && Node2 == null) return true;
+            if (Node1 != null && Node2 == null) return false;
+            if (Node1 == null && Node2 != null) return false;
+            if (Node1.n != Node2.n) return false;
+            return AreMirrorImages(Node1.left, Node2.right) && AreMirrorImages(Node1.right, Node2.left);
+        }
+
+        //Least Common Ancestor
+        public static BinaryTreeNode LCA(BinaryTreeNode Head,  BinaryTreeNode Node1, BinaryTreeNode Node2)
+        {
+            if (Head == null || Node1 == null || Node2 == null) return null;
+            if (Head == Node1 || Head == Node2) return Head;
+            BinaryTreeNode leftLca = LCA(Head.left, Node1, Node2);
+            BinaryTreeNode rightLca = LCA(Head.right, Node1, Node2);
+            if (leftLca != null && rightLca != null) return Head;
+            if (leftLca != null) return leftLca;
+            return rightLca;
+        }
     }
 }

@@ -22,10 +22,9 @@ namespace proprac
 
             bt.Levelorder_Traversal();
 
-            bt.Inorder_Recursive();
+            bt.ConvertMirrorImage();
 
-            bt.Inorder_NonRecursive();
-
+            bt.Levelorder_Traversal();
             Console.Read();
         }
     }
