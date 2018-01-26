@@ -406,5 +406,34 @@ namespace proprac
             if (leftLca != null) return leftLca;
             return rightLca;
         }
+
+        //Vertical sum of Binary tree
+        public void GetVerticalSum()
+        {
+            Dictionary<int, int> d = new Dictionary<int, int>();
+            GetVerticalSum(head, 0, ref d);
+            foreach (var key in d.Keys)
+            {
+                Console.Write("{0} ",d[key]);
+            }
+            Console.WriteLine();
+        }
+
+        public void GetVerticalSum(BinaryTreeNode head, int column,ref Dictionary<int, int> d)
+        {
+            if (head == null) return;
+
+            if (d.ContainsKey(column))
+            {
+                d[column] += head.n;
+            }
+            else {
+                d.Add(column, head.n);
+            }
+
+            GetVerticalSum(head.left, column - 1, ref d);
+            GetVerticalSum(head.right, column + 1, ref d);
+        }
+
     }
 }
