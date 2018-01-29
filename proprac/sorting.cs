@@ -6,6 +6,8 @@ namespace proprac
 {
     public static class sorting
     {
+        //SIBQMBRH
+
         //o(n2)
         public static int[] selectionsort(int[] A)
         {
@@ -229,6 +231,69 @@ namespace proprac
             
         }
 
-        
+
+        //Heap Sort
+        public static void HeapSort(int[] A)
+        {
+            BuildMaxHeap(ref A);
+            int heapLength = A.Length - 1;
+
+            while (heapLength >= 0)
+            {
+                Swap(ref A, 0, heapLength);
+                MaxHeapify(ref A, 0, --heapLength);
+                
+            }
+            utility.showarray(A);
+        }
+        private static void BuildMaxHeap(ref int[] A)
+        {
+            int HeapLength = A.Length - 1;
+            for (int i = (A.Length / 2) - 1; i >= 0; i--)
+            {
+                MaxHeapify(ref A, i, HeapLength);
+            }
+        }
+        private static void MaxHeapify(ref int[] A, int i, int heapLength)
+        {
+            int left = Left(i);
+            int right = Right(i);
+            int MaxIndex = i;
+            if (left <= heapLength && A[left] > A[i])
+            {
+                MaxIndex = left;
+            }
+            else
+            {
+                MaxIndex = i;
+            }
+
+            if (right <= heapLength && A[right] > A[MaxIndex])
+            {
+                MaxIndex = right;
+            }
+
+            if (MaxIndex != i)
+            {
+                Swap(ref A, MaxIndex, i);
+                MaxHeapify(ref A, MaxIndex, heapLength);
+            }
+        }
+        private static void Swap(ref int[] A, int i, int j)
+        {
+            int temp = A[i];
+            A[i] = A[j];
+            A[j] = temp;
+        }
+        private static int Left(int i)
+        {
+            return (2 * i) + 1;
+        }
+        private static int Right(int i)
+        {
+            return (2 * i) + 2;
+        }
+
+
     }
 }

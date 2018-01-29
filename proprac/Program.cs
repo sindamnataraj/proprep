@@ -34,11 +34,13 @@ namespace proprac
             //bst.Insert(7);
             //bst.Insert(10);
             //bst.Inorder();
-            
 
-            
+
+
             #endregion
 
+            int[] A = { 10, 11, 2, 1, 5, 1, 0 };
+            sorting.HeapSort(A);
 
             Console.Read();
 
