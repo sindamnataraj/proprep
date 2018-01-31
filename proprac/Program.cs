@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 
 namespace proprac
 {
@@ -39,8 +40,17 @@ namespace proprac
 
             #endregion
 
-            int[] A = { 10, 11, 2, 1, 5, 1, 0 };
-            sorting.HeapSort(A);
+            //int[] A = { 10, 11, 2, 1, 5, 1, 0 };
+            //sorting.HeapSort(A);
+
+            Trie t = new Trie();
+            t.Insert("hello");
+
+            t.Insert("nataraj");
+            t.Insert("hell");
+
+            t.PrintAll();
+
 
             Console.Read();
 
