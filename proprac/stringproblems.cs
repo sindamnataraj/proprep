@@ -27,8 +27,6 @@ namespace proprac
             }
         }
 
-
-
         public static void ReverseSentenceWords(ref StringBuilder sb)
         {
             int i = 0;
@@ -51,6 +49,33 @@ namespace proprac
             }
             
 
+        }
+
+        public static void Permute(StringBuilder sb, int p, int q)
+        {
+            if (p == q)
+            {
+                Console.WriteLine(sb.ToString());
+                return;
+            }
+
+            if (p < q)
+            {
+                
+                for (int i = p; i <= q; i++)
+                {
+                    swap(ref sb, p, i);
+                    Permute(sb, p + 1, q);
+                    swap(ref sb, p, i);
+                }
+            }
+        }
+
+        private static void swap(ref StringBuilder sb, int i, int j)
+        {
+            char c = sb[i];
+            sb[i] = sb[j];
+            sb[j] = c;
         }
     }
 }

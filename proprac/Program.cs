@@ -10,9 +10,6 @@ namespace proprac
         static void Main(string[] args)
         {
 
-            string s = "12";
-            bool ssd = (s == "12");
-
             #region BT
             //BinaryTree bt = new BinaryTree();
             //bt.Insert(1);
@@ -35,22 +32,16 @@ namespace proprac
             //bst.Insert(7);
             //bst.Insert(10);
             //bst.Inorder();
-
-
-
             #endregion
 
+            #region Sorting
             //int[] A = { 10, 11, 2, 1, 5, 1, 0 };
             //sorting.HeapSort(A);
+            #endregion
 
-            Trie t = new Trie();
-            t.Insert("hello");
-
-            t.Insert("nataraj");
-            t.Insert("hell");
-
-            t.PrintAll();
-
+            StringBuilder sb = new StringBuilder();
+            sb.Append("abc");
+            stringproblems.Permute(sb, 0, 2);
 
             Console.Read();
 
@@ -69,5 +60,7 @@ namespace proprac
             }
 
         }
+
+
     }
 }
